@@ -16,10 +16,12 @@ $ sudo apt-get install nodejs -y
 #### ● check version of node.js
 ```
 $ node -v
+v10.16.3
 ```
 #### ● check version of npm
 ```
 $ npm -v
+6.9.0
 ```
 ### 1.1.2. install express.js
 #### ● install express globally
