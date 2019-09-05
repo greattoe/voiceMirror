@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset="utf-8">
+<title>Subway</title>
+<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+<table>
+	<tr align="center">
+		<td><div id="disp_cal" class="calendar"></div></td>
+		<td><div id="top_clock" class="topClock"></div></td>
+		<td>&nbsp; &nbsp; </td>
+		<td>|</td>
+		<td> Weather  </td><td>|</td>
+		<td> Album    </td><td>|</td>
+		<td> Schedule </td><td>|</td>
+		<td><div class="active"> Subway   </div></td><td>|</td>
+		<td>&nbsp; &nbsp; </td>
+		<td width="65"><div id="temper" class="temperature"></div></td>
+		<td width="50"><img id="icon" src="./images/icons/000.png" height="50" width="50" ></td>
+	</tr>
+</table>
+
+<hr color="#999"/>
+
+<table>
+	<tr align="center"><td><b><h2>Subway</h2></b></td></tr>
+	<tr align="center"><td><img src="images/subway.png"></td></tr>
+</table>
+
+<!-- 1. jquery 라이브러리 사용을 위한 CDN(Content Delivery Network) URL ---------->
+<script src="javascripts/jquery-1.12.4.min.js"></script>
+<!-- 5. 음성인식을 위해 사용한 "openweather.current.js" 파일 링크 ------------------>
+<script src="javascripts/annyang.min.js"></script>
+<!-- 6. TTS(Text To Speech) 재생을 위해 사용한 "responsivevoice..js" 파일 링크 ----->
+<script src="javascripts/responsivevoice.js"></script>
+<!-- 2. socket.io node package 사용을 위한 "socket.io.js" 파일 링크 --------------->
+<!-- script src="/socket.io/socket.io.js"></script-->
+<!-- 3. 시간, 날짜 표시를 위해 작성한 "clock.js" 파일 링크 ------------------------->
+<script src="javascripts/clock.js"></script>
+<!-- 4. 기온, 기상 표시를 위해 작성한 "openweather.current.js" 파일 링크 ----------->
+<script src="javascripts/openweather.current.js"></script>
+
+<script>
+$(document).ready(function()
+{
+    if (annyang)
+	{
+        var commands = {
+            '넌 누구니':function(){
+                responsiveVoice.speak("라즈베리파이 스마트미러다", "Korean Female");
+            },
+            '메뉴':function(){
+				responsiveVoice.speak("메뉴 및 사용법이다", "Korean Female");
+				window.location.replace("index.html");
+            },
+            '날씨':function(){
+				responsiveVoice.speak("일기예보다", "Korean Female");
+				window.location.replace("weather.html");
+            },
+            '사진':function(){
+				responsiveVoice.speak("포토앨범이다", "Korean Female"); 
+				window.location.replace("album.html");
+            },
+            '달력':function(){
+				responsiveVoice.speak("월간일정이다", "Korean Female");
+				window.location.replace("calendar.html");
+            },
+            '지하철':function(){
+				responsiveVoice.speak("서울 지하철 노선도다", "Korean Female");
+				window.location.replace("subway.html");
+            },
+            '거울':function(){
+				responsiveVoice.speak("거울 모드다", "Korean Female");
+				window.location.replace("blank.html");
+            },
+            '사용법':function(){
+				responsiveVoice.speak("사용법이다", "Korean Female");
+				window.location.replace("index.html");
+            },
+			'위':function(){
+				responsiveVoice.speak("스크롤 업", "Korean Female");
+				window.scrollBy(0, -200);
+            },
+			'아래':function(){
+				responsiveVoice.speak("스크롤 다운", "Korean Female");
+				window.scrollBy(0, 200);
+            },
+			'왼쪽':function(){
+				responsiveVoice.speak("스크롤 레프트", "Korean Female");
+				window.scrollBy(-200, 0);
+            },
+			'오른쪽':function(){
+				responsiveVoice.speak("스크롤 라이트", "Korean Female");
+				window.scrollBy(200, 0);
+            }
+        };
+        annyang.addCommands(commands);
+        annyang.removeCallback();
+        annyang.setLanguage('ko');
+        annyang.start({ autoRestart: true, continuous: false });
+    }
+});
+</script>
+</body>
+</html>

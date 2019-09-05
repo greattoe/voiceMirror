@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset="utf-8">
+<title>weather</title>
+<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+
+	<table>
+		<tr align="center">
+			<td><div id="disp_cal" class="calendar"></div></td>
+			<td><div id="top_clock" class="topClock"></div></td>
+			<td>&nbsp; &nbsp; </td>
+			<td>|</td>
+			<td><div class="active"> Weather </div></td><td>|</td>
+			<td> Album    </td><td>|</td>
+			<td> Schedule </td><td>|</td>
+			<td> Subway   </td><td>|</td>
+			<td>&nbsp; &nbsp; </td>
+			<td width="65"><div id="temper" class="temperature"></div></td>
+			<td width="50"><img id="icon" src="images/icons/000.png" height="50" width="50" ></td>
+		</tr>
+	</table>
+
+	<hr color="#999"/><br/>
+	
+	<table width="800" border="0">
+		<tr align="center"><td colspan=8><h2>Weather</h2></td></tr>
+		<tr align="center">
+			<!-- (i = 0)     0 = i * 3 + 0       1 = i * 3 + 1       2 = i * 3 + 2   -->
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<!-- (i = 1)     3 = i * 3 + 0       4 = i * 3 + 1       5 = i * 3 + 2   -->
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<!-- (i = 2)     6 = i * 3 + 0       7 = i * 3 + 1       8 = i * 3 + 2   -->
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td width="100"><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+		</tr>
+		<tr align="center">
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+		</tr>
+		<tr align="center">
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+		</tr>
+		<tr align="center">
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+		</tr>
+		<tr align="center">
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+			<td><p class="date"></p><p class="time"></p><p class="temp"></p><img src="images/icons/000.png" height="75" width="75" border="0"></td>
+		</tr>
+	</table>
+
+	<hr color="#999"/>
+
+	<!-- 1. jquery 라이브러리 사용을 위한 CDN(Content Delivery Network) URL ---------->
+	<script src="javascripts/jquery-1.12.4.min.js"></script>
+	<!-- 5. 음성인식을 위해 사용한 "openweather.current.js" 파일 링크 ------------------>
+	<script src="javascripts/annyang.min.js"></script>
+	<!-- 6. TTS(Text To Speech) 재생을 위해 사용한 "responsivevoice..js" 파일 링크 ----->
+	<script src="javascripts/responsivevoice.js"></script>
+	<!-- 2. socket.io node package 사용을 위한 "socket.io.js" 파일 링크 --------------->
+	<!-- script src="/socket.io/socket.io.js"></script-->
+	<!-- 3. 시간, 날짜 표시를 위해 작성한 "clock.js" 파일 링크 ------------------------->
+	<script src="javascripts/clock.js"></script>
+	<!-- 4. 기온, 기상 표시를 위해 작성한 "openweather.current.js" 파일 링크 ----------->
+	<script src="javascripts/openweather.current.js"></script>
+
+	<script>
+		var baseURL = "api.openweathermap.org/data/2.5/forecast?";
+		var cityID  = "1835848";		// Seoul
+		var appKey  = "a00d613576b6c61eefab71eabe576d63";
+		//http://api.openweathermap.org/data/2.5/forecast?id=1835848&appid=
+		var url = "http://" + baseURL + "id=" + cityID + "&appid=" + appKey;
+
+		$.getJSON(url, function(data) {
+			var __temp		= "";
+			var __num		= "";
+			var __hour		= "";
+			var __date		= "";
+			var __time		= "";
+			var __img_url	= "";
+					
+			var p_tags = document.getElementsByTagName("p");
+					
+			for(var i = 0, j = 0; i < data.list.length, j < p_tags.length; i++, j++)
+			{
+				__temp = (parseFloat(data.list[i].main.temp) - 273.0).toFixed(1)+" °C";
+				__num  = parseInt(data.list[i].weather[0].id);
+				__hour = parseInt(data.list[i].dt_txt.substr(11,2)) + 8;
+				if(__hour > 23) __hour = __hour - 24;
+				__date = data.list[i].dt_txt.substr(5,5).replace("-"," / ");
+				__time = (Number(__hour) < 10) ? '0' + __hour + ' : 00' : __hour+' : 00';
+				__img_url = getIcon(__num, __hour);
+				p_tags[j * 3 + 0].innerHTML = __date;
+				p_tags[j * 3 + 1].innerHTML = __time;
+				p_tags[j * 3 + 2].innerHTML = __temp;
+				document.images[ i + 1].src = __img_url;
+			}
+			
+			if(data.list.length < 40) {
+				for(var i = 0; i<40-data.list.length; i++) {
+					p_tags[i].innerHTML = "";
+					document.images[data.list.length+1+i].src = "images/icons/000.png"
+				}
+			}
+		});
+
+		function getIcon(num, hour) {
+			if     ( num >= 200 && num < 300 )	return "images/icons/2xx.png";
+			else if( num >= 300 && num < 400 )	return "images/icons/3xx.png";
+			else if( num >= 500 && num < 510 ) {
+				if( hour >= 6 && hour < 19 )	return "images/icons/50x.png";
+				else							return "images/icons/50xn.png";
+			}
+			else if( num == 511              )	return "images/icons/511.png";
+			else if( num >= 520 && num < 600 )	return "images/icons/52x.png";
+			else if( num >= 600 && num < 700 )	return "images/icons/6xx.png";
+			else if( num >= 700 && num < 800 )	return "images/icons/7xx.png";
+			else if( num == 800              ) {
+				if( hour >= 6 && hour < 19 )	return "images/icons/800.png";
+				else							return "images/icons/800n.png";
+			}
+			else if( num == 801              ) {
+				if( hour >= 6 && hour < 19 )	return "images/icons/801.png";
+				else							return "images/icons/801n.png";
+			}
+			else if( num == 802              )	return "images/icons/802.png";
+			else if( num == 803              )	return "images/icons/803.png";
+			else if( num == 804              )	return "images/icons/804.png";
+			else								return "images/icons/000.png";
+		}
+	</script>
+
+	<script>
+		$(document).ready(function()
+		{
+			if (annyang)
+			{
+				var commands = {
+					'넌 누구니':function(){
+						responsiveVoice.speak("라즈베리파이 스마트미러다", "Korean Female");
+					},
+					'메뉴':function(){
+						responsiveVoice.speak("메뉴 및 사용법이다", "Korean Female");
+						window.location.replace("index.html");
+					},
+					'날씨':function(){
+						responsiveVoice.speak("일기예보다", "Korean Female");
+						window.location.replace("weather.html");
+					},
+					'사진':function(){
+						responsiveVoice.speak("포토앨범이다", "Korean Female"); 
+						window.location.replace("album.html");
+					},
+					'달력':function(){
+						responsiveVoice.speak("월간일정이다", "Korean Female");
+						window.location.replace("calendar.html");
+					},
+					'지하철':function(){
+						responsiveVoice.speak("서울 지하철 노선도다", "Korean Female");
+						window.location.replace("subway.html");
+					},
+					'거울':function(){
+						responsiveVoice.speak("거울 모드다", "Korean Female");
+						window.location.replace("blank.html");
+					},
+					'사용법':function(){
+						responsiveVoice.speak("사용법이다", "Korean Female");
+						window.location.replace("index.html");
+					}
+				};
+				annyang.addCommands(commands);
+				annyang.removeCallback();
+				annyang.setLanguage('ko');
+				annyang.start({ autoRestart: true, continuous: false });
+			}
+		});
+	</script>
+</body>
+</html>

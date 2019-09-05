@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset="utf-8">
+<title>Manual</title>
+<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+<table>
+	<tr align="center">
+		<td><div id="disp_cal"  class="calendar"></div></td>
+		<td><div id="top_clock" class="topClock"></div></td>
+		<td>&nbsp; &nbsp;	</td><td>|</td>
+		<td> Weather		</td><td>|</td>
+		<td> Album			</td><td>|</td>
+		<td> Schedule		</td><td>|</td>
+		<td> Subway			</td><td>|</td>
+		<td>&nbsp; &nbsp;			  </td>
+		<td width="65"><div id="temper" class="temperature"></div></td>
+		<td width="50"><img id="icon" src="./images/icons/000.png" height="50" width="50" ></td>
+	</tr>
+</table>
+
+<hr color="#999"/>
+
+<table>
+	<tr align="center"><td colspan="4"><h3>How to use Pi-Mirror</h3></td></tr>
+	<tr>
+		<td colspan="2"><div class="sub"><h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ● &nbsp;Pi-Mirror 컨텐츠</h4></div></td>
+		<td colspan="2"><div class="sub"><h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ● &nbsp;보이스 인터페이스</h4></div></td>
+	</tr>
+	<tr>
+		<td align="right">
+			<b>&nbsp; weather &nbsp; </b><p></p>
+			<b>&nbsp; Album &nbsp;   </b><p></p>
+			<b>&nbsp; Schedule &nbsp;</b><p></p>
+			<b>&nbsp; Subway &nbsp;  </b><p></p>
+			   &nbsp; 				<br/><p></p>
+			   &nbsp;				<br/><p></p>
+			   &nbsp;				<br/>
+		</td>
+		<td align="left">
+			- &nbsp; 일기예보		<p></p>
+			- &nbsp; 포토 앨범		<p></p>
+			- &nbsp; 구글 캘린더	<p></p>
+			- &nbsp; 지하철 노선도	<p></p>
+			  &nbsp;	<br/>	<p></p>
+			  &nbsp;	<br/>	<p></p>
+			  &nbsp;	<br/>
+		</td>
+		<td align="right">
+			<b>'넌 누구니?'	&nbsp;</b><p></p>
+			<b>'메뉴'			&nbsp;</b><p></p>
+			<b>'날씨'			&nbsp;</b><p></p>
+			<b>'사진'			&nbsp;</b><p></p>
+			<b>'달력'			&nbsp;</b><p></p>
+			<b>'지하철'		&nbsp;</b><p></p>
+			<b>'거울'			&nbsp;</b>
+		</td>
+		<td align="left">
+			-&nbsp; Pi-Mirror 정보	<p></p>
+			-&nbsp; 음성 명령어 안내		<p></p>
+			-&nbsp; 일기예보			<p></p>
+			-&nbsp; 포토앨범			<p></p>
+			-&nbsp; 구글 캘린더			<p></p>
+			-&nbsp; 지하철 노선도		<p></p>
+			-&nbsp; 거울모드
+		</td>
+	</tr>
+</table>
+
+<!-- 1. jquery 라이브러리 사용을 위한 CDN(Content Delivery Network) URL ---------->
+<script src="javascripts/jquery-1.12.4.min.js"></script>
+<!-- 5. 음성인식을 위해 사용한 "openweather.current.js" 파일 링크 ------------------>
+<script src="javascripts/annyang.min.js"></script>
+<!-- 6. TTS(Text To Speech) 재생을 위해 사용한 "responsivevoice..js" 파일 링크 ----->
+<script src="javascripts/responsivevoice.js"></script>
+<!-- 2. socket.io node package 사용을 위한 "socket.io.js" 파일 링크 --------------->
+<!-- script src="/socket.io/socket.io.js"></script-->
+<!-- 3. 시간, 날짜 표시를 위해 작성한 "clock.js" 파일 링크 ------------------------->
+<script src="javascripts/clock.js"></script>
+<!-- 4. 기온, 기상 표시를 위해 작성한 "openweather.current.js" 파일 링크 ----------->
+<script src="javascripts/openweather.current.js"></script>
+
+<script>
+	$(document).ready(function()
+	{
+		if (annyang)
+		{
+			var commands = {
+				'넌 누구니':function(){
+					responsiveVoice.speak("라즈베리파이 스마트미러다", "Korean Female");
+				},
+				'메뉴':function(){
+					responsiveVoice.speak("메뉴 및 사용법이다", "Korean Female");
+					window.location.replace("index.html");
+				},
+				'날씨':function(){
+					responsiveVoice.speak("일기예보다", "Korean Female");
+					window.location.replace("weather.html");
+				},
+				'사진':function(){
+					responsiveVoice.speak("포토앨범이다", "Korean Female"); 
+					window.location.replace("album.html");
+				},
+				'달력':function(){
+					responsiveVoice.speak("월간일정이다", "Korean Female");
+					window.location.replace("calendar.html");
+				},
+				'지하철':function(){
+					responsiveVoice.speak("서울 지하철 노선도다", "Korean Female");
+					window.location.replace("subway.html");
+				},
+				'거울':function(){
+					responsiveVoice.speak("거울 모드다", "Korean Female");
+					window.location.replace("blank.html");
+				},
+				'사용법':function(){
+					responsiveVoice.speak("사용법이다", "Korean Female");
+					window.location.replace("index.html");
+				}
+			};
+			annyang.addCommands(commands);
+			annyang.removeCallback();
+			annyang.setLanguage('ko');
+			annyang.start({ autoRestart: true, continuous: false });
+		}
+	});
+</script>
+</body>
+</html>

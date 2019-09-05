@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+<meta charset="utf-8">
+<title>Schedule</title>
+<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+
+<table>
+	<tr align="center">
+		<td><div id="disp_cal" class="calendar"></div></td>
+		<td><div id="top_clock" class="topClock"></div></td>
+		<td>&nbsp; &nbsp; </td>
+		<td>|</td>
+		<td> Weather </td><td>|</td>
+		<td> Album    </td><td>|</td>
+		<td><div class="active"> Schedule </div></td><td>|</td>
+		<td> Subway   </td><td>|</td>
+		<td>&nbsp; &nbsp; </td>
+		<td width="65"><div id="temper" class="temperature"></div></td>
+		<td width="50"><img id="icon" src="./images/icons/000.png" height="50" width="50" ></td>
+	</tr>
+</table>
+
+<hr color="#999"/>
+
+<table><tr align="center"><td><h2> Schedule </h2></td></tr></table>
+
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;
+	 showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;
+	 height=1024&amp;wkst=2&amp;hl=ko&amp;bgcolor=%23ccccff&amp;
+	 src=greattoe%40gmail.com&amp;color=%23691426&amp;
+	 src=%23contacts%40group.v.calendar.google.com&amp;
+	 color=%2328754E&amp;src=ko.south_korea%23holiday%40group.v.calendar.google.com&amp;
+	 color=%230F4B38&amp;src=e646968p084okf3s31isevtod4%40group.calendar.google.com&amp;
+	 color=%2342104A&amp;src=fqtp8ek7hlkp4rrr8vqdt2i5j8%40group.calendar.google.com&amp;
+	 color=%23711616&amp;src=aqtev75qhrfdgcioufvu90c028%40group.calendar.google.com&amp;
+	 color=%23182C57&amp;ctz=Asia%2FSeoul" 
+	 style="border-width:0" width="640" height="1024" frameborder="0" scrolling="no">
+</iframe>
+
+<script src="javascripts/jquery-1.12.4.min.js"></script>
+<script src="javascripts/annyang.min.js"></script>
+<script src="javascripts/responsivevoice.js"></script>
+<script src="javascripts/clock.js"></script>
+<script src="javascripts/openweather.current.js"></script>
+
+<script>
+$(document).ready(function()
+{
+    if (annyang)
+	{
+        var commands = {
+            '넌 누구니':function(){
+                responsiveVoice.speak("라즈베리파이 스마트미러다", "Korean Female");
+            },
+            '메뉴':function(){
+				responsiveVoice.speak("메뉴 및 사용법이다", "Korean Female");
+				window.location.replace("index.html");
+            },
+            '날씨':function(){
+				responsiveVoice.speak("일기예보다", "Korean Female");
+				window.location.replace("weather.html");
+            },
+            '사진':function(){
+				responsiveVoice.speak("포토앨범이다", "Korean Female"); 
+				window.location.replace("album.html");
+            },
+            '달력':function(){
+				responsiveVoice.speak("월간일정이다", "Korean Female");
+				window.location.replace("calendar.html");
+            },
+            '지하철':function(){
+				responsiveVoice.speak("서울 지하철 노선도다", "Korean Female");
+				window.location.replace("subway.html");
+            },
+            '거울':function(){
+				responsiveVoice.speak("거울 모드다", "Korean Female");
+				window.location.replace("blank.html");
+            },
+            '사용법':function(){
+				responsiveVoice.speak("사용법이다", "Korean Female");
+				window.location.replace("index.html");
+            }
+        };
+        annyang.addCommands(commands);
+        annyang.removeCallback();
+        annyang.setLanguage('ko');
+        annyang.start({ autoRestart: true, continuous: false });
+    }
+});
+</script>
+
+</body>
+</html>
