@@ -1,7 +1,7 @@
 var baseURL = "api.openweathermap.org/data/2.5/weather?";
 var cityID  = "1835848";		// Seoul
 // use your api-key which get from openweathermap
-var appKey  = "3e4a04b799f0da7a9ad531d810d43d52";
+var appKey  = "/* type you api-key here */";
 var url = "http://" + baseURL + "id=" + cityID + "&appid=" + appKey;
 var temp = 0.0;
 var num;
